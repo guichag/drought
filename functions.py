@@ -89,6 +89,19 @@ def load_cum_year(ymin, ymax, year, size=30):
     return out
 
 
+def load_cum_climato(ymin, ymax, size=30):
+    """Load yearly cumulative rainfall data"""
+    per = str(ymin) + '-' + str(ymax)
+    size_ = str(int(size*res/1000)) + 'x' + str(int(size*res/1000))
+    datadir = DATADIR + '/Fr/SAFRAN/' + per + '/cum/' + size_
+    datafile = datadir + '/climato.nc'
+
+    out = xr.open_dataarray(datafile)
+
+    return out
+
+
+#~~~ DEPRECATED ~~~#
 def load_pcum(ymin, ymax, size=30):
     """Load cumulative rainfall data"""
     per = str(ymin) + '-' + str(ymax)
@@ -100,5 +113,5 @@ def load_pcum(ymin, ymax, size=30):
         out = dill.load(pics)
 
     return out
-
+#~~~ DEPRECATED ~~~#
 
