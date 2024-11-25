@@ -1,4 +1,4 @@
-name: cmip6
+name: drought
 channels:
   - conda-forge
   - defaults
